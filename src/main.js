@@ -13,7 +13,7 @@ new Vue({
     },
     methods:{
         alert(){
-            alert('1')
+            alert('我被点了')
         }
     }
 
