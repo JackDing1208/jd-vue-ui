@@ -46,9 +46,9 @@ const expect =chai.expect
             isLoading:true
         }
     })
-    button.$mount('#app')
+    button.$mount()
     let loading=button.$el.querySelector('use')
-    console.log(loading);
     let name=loading.getAttribute('xlink:href')
+    console.log(name);
     expect(name).to.eq('#i-loading')
 }
