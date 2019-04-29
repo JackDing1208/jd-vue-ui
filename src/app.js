@@ -6,6 +6,6 @@ Vue.component('g-button',Button)
 new Vue({
     el:'#app',
     data:{
-        message:'hello'
+        message:'oh yeah!!!'
     }
 })
