@@ -1,6 +1,7 @@
 <template>
-    <button class="click" :class=`icon-${iconPosition}` @click="$emit('click')">
-        <g-icon v-if="icon" :name="icon"></g-icon>
+    <button class="click" :class=`icon-${iconPosition}` @click="loadingStatus">
+        <g-icon v-if="!loading ||(icon && !isLoading)" :name="icon"></g-icon>
+        <g-icon v-if="loading && isLoading" name="loading" :class="{spin:isLoading}"></g-icon>
 
         <div class="content">
             <slot></slot>
@@ -16,18 +17,31 @@
           iconPosition:{
               type: String,
               default:'left'
-          }
+          },
+          loading:{}
         },
         name: "Button",
         data() {
             return {
-                message: '点我'
+                isLoading:false
+            }
+        },
+        methods:{
+            loadingStatus(){
+                this.$emit('click')
+                this.isLoading=!this.isLoading
             }
         }
     }
 </script>
 
 <style scoped>
+    @keyframes spin {
+        0% {transform: rotate(0deg)}
+        100%{transform: rotate(360deg)}
+    }
+    .spin{
+        animation: spin 1s infinite linear}
     .click {
         display: inline-flex;
         justify-content: center;
