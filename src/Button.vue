@@ -1,7 +1,7 @@
 <template>
     <button class="click" :class=`icon-${iconPosition}` @click="loadingStatus">
-        <g-icon v-if="!loading ||(icon && !isLoading)" :name="icon"></g-icon>
-        <g-icon v-if="loading && isLoading" name="loading" :class="{spin:isLoading}"></g-icon>
+        <g-icon v-if="icon && (!isLoading ||!loading)" :name="icon"></g-icon>
+        <g-icon class="loading" v-if="loading && isLoading" name="loading"></g-icon>
 
         <div class="content">
             <slot></slot>
@@ -12,24 +12,27 @@
 <script>
     export default {
         // props:['icon','icon-position'],
-        props:{
-          icon:{},
-          iconPosition:{
-              type: String,
-              default:'left'
-          },
-          loading:{}
+        props: {
+            icon: {},
+            iconPosition: {
+                type: String,
+                default: 'left'
+            },
+            loading: {
+                type: Boolean,
+                default: false
+            }
         },
         name: "Button",
         data() {
             return {
-                isLoading:false
+                isLoading: false
             }
         },
-        methods:{
-            loadingStatus(){
+        methods: {
+            loadingStatus() {
                 this.$emit('click')
-                this.isLoading=!this.isLoading
+                this.isLoading = !this.isLoading
             }
         }
     }
@@ -37,11 +40,18 @@
 
 <style scoped>
     @keyframes spin {
-        0% {transform: rotate(0deg)}
-        100%{transform: rotate(360deg)}
+        0% {
+            transform: rotate(0deg)
+        }
+        100% {
+            transform: rotate(360deg)
+        }
     }
-    .spin{
-        animation: spin 1s infinite linear}
+
+    .loading {
+        animation: spin 1s infinite linear
+    }
+
     .click {
         display: inline-flex;
         justify-content: center;
@@ -56,21 +66,24 @@
         vertical-align: top;
 
     }
-    .click .content{
+
+    .click .content {
         line-height: var(--button-line-height);
     }
+
     .click.icon-left {
         flex-direction: row;
     }
-    .click.icon-left svg{
+
+    .click.icon-left svg {
         margin-right: 0.3em;
     }
 
-    .click.icon-right{
+    .click.icon-right {
         flex-direction: row-reverse;
     }
 
-    .click.icon-right svg{
+    .click.icon-right svg {
         margin-left: 0.3em;
     }
 
@@ -78,10 +91,11 @@
         border-color: var(--border-color-hover);
     }
 
-    .click:active{
+    .click:active {
         background: var(--button-active-bg);
     }
-    .click:focus{
+
+    .click:focus {
         outline: none;
     }
 </style>
