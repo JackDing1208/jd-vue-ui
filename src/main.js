@@ -9,6 +9,12 @@ Vue.component('g-icon',Icon)
 new Vue({
     el:'#app',
     data:{
-        message:'oh yeah!!!'
+        message:'hello,world!'
+    },
+    methods:{
+        alert(){
+            alert('1')
+        }
     }
+
 })
