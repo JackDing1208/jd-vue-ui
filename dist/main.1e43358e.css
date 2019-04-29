@@ -1,4 +1,37 @@
-.click[data-v-62cca5]{
-    background: azure;
-    padding: 5px 1em;
+.click[data-v-62cca5] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--button-height);
+    font-size: var(--font-size);
+    background: var(--button-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-border-radius);
+    color: var(--color);
+    padding: 0 0.9em;
+    vertical-align: top;
+}
+.click .content[data-v-62cca5]{
+    line-height: var(--button-line-height);
+}
+.click.icon-left[data-v-62cca5] {
+    flex-direction: row;
+}
+.click.icon-left svg[data-v-62cca5]{
+    margin-right: 0.3em;
+}
+.click.icon-right[data-v-62cca5]{
+    flex-direction: row-reverse;
+}
+.click.icon-right svg[data-v-62cca5]{
+    margin-left: 0.3em;
+}
+.click[data-v-62cca5]:hover {
+    border-color: var(--border-color-hover);
+}
+.click[data-v-62cca5]:active{
+    background: var(--button-active-bg);
+}
+.click[data-v-62cca5]:focus{
+    outline: none;
 }
