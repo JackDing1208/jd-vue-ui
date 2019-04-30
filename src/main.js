@@ -20,7 +20,13 @@ new Vue({
 
 //单元测试
 import chai from 'chai'
+import spies from 'chai-spies'
+
+
 const expect =chai.expect
+chai.use(spies)
+
+
 {
     const Constructor =Vue.extend(Button)   //创建组件构造器
     const button=new Constructor({          //创建组件实例并传入属性
@@ -33,6 +39,8 @@ const expect =chai.expect
     let name=icon.getAttribute('xlink:href')
     console.log(name);
     expect(name).to.eq('#i-setting')
+    button.$el.remove()
+    button.$destroy()
 }
 
 {
@@ -51,4 +59,42 @@ const expect =chai.expect
     let name=loading.getAttribute('xlink:href')
     console.log(name);
     expect(name).to.eq('#i-loading')
+    button.$el.remove()
+    button.$destroy()
 }
+{
+    const Constructor =Vue.extend(Button)   //创建组件构造器
+    const button=new Constructor({          //创建组件实例并传入属性
+        propsData:{
+            icon:'setting',
+            iconPosition:'right'
+        },
+    })
+    const div=document.createElement('div')
+    document.body.appendChild(div)
+    button.$mount(div)
+    let click=button.$el
+    let {flexDirection}=window.getComputedStyle(click)  //获取CSS属性
+    expect(flexDirection).to.eq('row-reverse')
+    button.$el.remove()
+    button.$destroy()
+}
+{
+    const Constructor =Vue.extend(Button)   //创建组件构造器
+    const button=new Constructor({          //创建组件实例并传入属性
+        propsData:{
+            icon:'setting',
+        },
+    })
+    button.$mount()
+    let spy=chai.spy(function () {})   //引入可被监测的spy函数
+    button.$on('click',spy)
+    let click=button.$el
+    console.log(click);
+    click.click()
+    expect(spy).to.have.been.called()   //断言spy函数是否被调用
+    button.$el.remove()
+    button.$destroy()
+}
+
+
