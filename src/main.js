@@ -27,7 +27,7 @@ const expect =chai.expect
 chai.use(spies)
 
 
-{
+{   //测试按钮是否含有对应icon
     const Constructor =Vue.extend(Button)   //创建组件构造器
     const button=new Constructor({          //创建组件实例并传入属性
         propsData:{
@@ -43,9 +43,9 @@ chai.use(spies)
     button.$destroy()
 }
 
-{
-    const Constructor =Vue.extend(Button)   //创建组件构造器
-    const button=new Constructor({          //创建组件实例并传入属性
+{   //测试按钮是否含有loading动画
+    const Constructor =Vue.extend(Button)
+    const button=new Constructor({
         propsData:{
             icon:'setting',
             loading: true
@@ -62,9 +62,9 @@ chai.use(spies)
     button.$el.remove()
     button.$destroy()
 }
-{
-    const Constructor =Vue.extend(Button)   //创建组件构造器
-    const button=new Constructor({          //创建组件实例并传入属性
+{   //测试icon位置
+    const Constructor =Vue.extend(Button)
+    const button=new Constructor({
         propsData:{
             icon:'setting',
             iconPosition:'right'
@@ -79,9 +79,9 @@ chai.use(spies)
     button.$el.remove()
     button.$destroy()
 }
-{
-    const Constructor =Vue.extend(Button)   //创建组件构造器
-    const button=new Constructor({          //创建组件实例并传入属性
+{   //测试点击后函数是否被调用
+    const Constructor =Vue.extend(Button)
+    const button=new Constructor({
         propsData:{
             icon:'setting',
         },
