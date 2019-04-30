@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Button from '../src/button'
+import Button from '../src/Button'
 import chai from 'chai'
 import spies from 'chai-spies'
 const expect = chai.expect;
