@@ -11,7 +11,7 @@ Vue.config.devtools = false
 
 describe('Button', () => {
     it('存在.', () => {
-        expect(Button).to.be.ok
+        expect(Button).to.exist
     })
     it('可以设置icon.', () => {
         const Constructor = Vue.extend(Button)
@@ -71,22 +71,18 @@ describe('Button', () => {
     })
     it('点击 button 触发 click 事件', () => {
         const Constructor = Vue.extend(Button)
-        const button = new Constructor({
+        const vm = new Constructor({
             propsData: {
                 icon: 'setting',
             },
         })
-        button.$mount()
-        let spy = chai.spy(function () {
-        })   //引入可被监测的spy函数
-        button.$on('click', spy)
-        let click = button.$el
-        console.log(click);
+        vm.$mount()
+        let spy = chai.spy(function () { })   //引入可被监测的spy函数
+        vm.$on('click', spy)
+        let click = vm.$el
         click.click()
         expect(spy).to.have.been.called()   //断言spy函数是否被调用
-        button.$el.remove()
-        button.$destroy()
-
-
+        vm.$el.remove()
+        vm.$destroy()
     })
 })

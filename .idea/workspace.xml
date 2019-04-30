@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39dbe5e2-9037-4d02-9fed-bf1a393ef1ac" name="Default Changelist" comment="自动测试通过">
+    <list default="true" id="39dbe5e2-9037-4d02-9fed-bf1a393ef1ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/button.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/button.test.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -34,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/button.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-304">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="240">
+              <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -187,7 +184,7 @@
       <workItem from="1556513653955" duration="12074000" />
       <workItem from="1556530089126" duration="3785000" />
       <workItem from="1556548047521" duration="5984000" />
-      <workItem from="1556594767306" duration="6672000" />
+      <workItem from="1556594767306" duration="9630000" />
     </task>
     <task id="LOCAL-00001" summary="npm vue">
       <created>1556513974865</created>
@@ -273,21 +270,28 @@
       <option name="project" value="LOCAL" />
       <updated>1556598320013</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="自动测试通过">
+      <created>1556601492781</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556601492781</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28515000" />
+    <option name="totallyTimeSpent" value="31473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -395,8 +399,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/button.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-304">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="240">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
