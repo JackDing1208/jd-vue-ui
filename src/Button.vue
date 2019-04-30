@@ -75,20 +75,15 @@
         line-height: var(--button-line-height);
     }
 
-    .click.icon-left {
-        flex-direction: row;
-    }
-
     .click.icon-left svg {
         margin-right: 0.3em;
     }
 
-    .click.icon-right {
-        flex-direction: row-reverse;
-    }
 
     .click.icon-right svg {
         margin-left: 0.3em;
+        order: 1;
+
     }
 
     .click:hover {
