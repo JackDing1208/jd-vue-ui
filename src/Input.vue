@@ -7,12 +7,12 @@
                @change="$emit('change',$event.target.value)"
                @input="$emit('input',$event.target.value)"
                @blur="$emit('blur',$event.target.value)"
-               @focus="$emit('focus',$event.target.value)">
+               @focus="$emit('focus',$event.target.value)"
+        >
         <template v-if="error">
             <g-icon class="icon" name="alert"></g-icon>
             <span class="errorInfo">{{error}}</span>
         </template>
-
     </div>
 </template>
 
