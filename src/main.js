@@ -10,7 +10,8 @@ Vue.component('g-input', Input)
 new Vue({
     el: '#app',
     data: {
-        message: 'hello,world!'
+        message: 'hello,world!',
+        errorInfo:'名字不能少于五个字'
     },
     methods: {
         alert() {
