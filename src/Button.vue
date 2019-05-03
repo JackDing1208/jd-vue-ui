@@ -42,7 +42,19 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+        $button-height:32px;
+        $font-size:14px;
+        $button-bg:white;
+        $button-active-bg:#eee;
+        $button-border-radius:4px;
+        $color:#333;
+        $border-color:#999;
+        $border-color-hover:#666 ;
+        $button-line-height:20px;
+
+
     @keyframes spin {
         0% {
             transform: rotate(0deg)
@@ -60,12 +72,12 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        height: var(--button-height);
-        font-size: var(--font-size);
-        background: var(--button-bg);
-        border: 1px solid var(--border-color);
-        border-radius: var(--button-border-radius);
-        color: var(--color);
+        height: $button-height;
+        font-size: $font-size;
+        background: $button-bg;
+        border: 1px solid $border-color;
+        border-radius: $button-border-radius;
+        color: $color;
         padding: 0 0.9em;
         vertical-align: top;
 

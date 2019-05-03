@@ -7,24 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>轱辘</title>
     <style>
-        *{margin: 0;padding: 0;box-sizing: border-box}
-        /*CSS声明变量的用法*/
-        /*:root兼容性较差*/
-        html{
-            --button-height:32px;
-            --font-size:14px;
-            --button-bg:white;
-            --button-active-bg:#eee;
-            --button-border-radius:4px;
-            --color:#333;
-            --border-color:#999;
-            --border-color-hover:#666 ;
-            --button-line-height:20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
         }
-        #app{
+
+        /*CSS声明变量的用法，兼容性较差，改用scss*/
+
+        /*
+        [--root] {--button-bg: white;}
+        button{background: var(--button-bg);}
+        */
+
+        #app {
             padding: 10px;
         }
-        .input-wrapper{
+
+        .input-wrapper {
             margin: 10px;
         }
     </style>
@@ -36,14 +36,14 @@
         <g-input v-model="message"></g-input>
         {{message}}
         <g-input value="disabled" disabled></g-input>
-        <g-input value="readonly" readonly ></g-input>
+        <g-input value="readonly" readonly></g-input>
         <g-input value="张三" :error="errorInfo"></g-input>
 
     </div>
 
     <g-button @click="alert">按钮</g-button>
-    <g-button icon="like" >点赞</g-button>
-    <g-button icon="setting" >设置</g-button>
+    <g-button icon="like">点赞</g-button>
+    <g-button icon="setting">设置</g-button>
     <g-button icon="setting" icon-position="right">设置</g-button>
     <g-button icon="download" :loading="true">下载</g-button>
 </div>
