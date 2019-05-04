@@ -1,10 +1,10 @@
 <template>
-    <button class="click" :class=`icon-${iconPosition}` @click="loadingStatus">
+    <button class="click" :class="[{circle:circle},`icon-${iconPosition}`]" @click="loadingStatus">
         <g-icon v-if="icon && (!isLoading ||!loading)" :name="icon"></g-icon>
         <g-icon class="loading" v-if="loading && isLoading" name="loading"></g-icon>
 
-        <div class="content">
-            <slot></slot>
+        <div v-if="$slots.default" class="content">
+            <slot>默认内容</slot>
         </div>
     </button>
 </template>
@@ -25,7 +25,12 @@
             loading: {
                 type: Boolean,
                 default: false
+            },
+            circle: {
+                type: Boolean,
+                default: false
             }
+
         },
         name: "Button",
         data() {
@@ -38,7 +43,8 @@
                 this.$emit('click')
                 this.isLoading = !this.isLoading
             }
-        }
+        },
+
     }
 </script>
 
@@ -80,22 +86,26 @@
         color: $color;
         padding: 0 0.9em;
         vertical-align: top;
-
+    }
+    .click :not(:first-child){
+        margin-left: 0.3em;
     }
 
+    .click.circle{
+        border-radius: 50%;
+        width: $button-height;
+        padding: 0;
+    }
     .click .content {
         line-height: var(--button-line-height);
     }
 
     .click.icon-left svg {
-        margin-right: 0.3em;
     }
 
 
     .click.icon-right svg {
-        margin-left: 0.3em;
         order: 1;
-
     }
 
     .click:hover {
