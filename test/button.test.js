@@ -40,6 +40,21 @@ describe('Button', () => {
         expect(useElements[0].getAttribute('xlink:href')).to.equal('#i-loading')
         vm.$destroy()
     })
+    it('可以设置circle.', () => {
+        const div = document.createElement('div')
+        document.body.appendChild(div)
+        const Constructor = Vue.extend(Button)
+        const vm = new Constructor({
+            propsData: {
+                icon: 'settings',
+                circle: true
+            }
+        }).$mount(div)
+        const click = vm.$el
+        expect(getComputedStyle(click).borderRadius).to.eq('50%')
+        vm.$el.remove()
+        vm.$destroy()
+    })
     it('icon 默认的 order 是 0', () => {
         const div = document.createElement('div')
         document.body.appendChild(div)
