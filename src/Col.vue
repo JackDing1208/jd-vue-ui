@@ -1,6 +1,8 @@
 <template>
-    <div class="col" :class=[colWidth,colOffset]>
-        <slot></slot>
+    <div class="col-wrapper" :class=[colWidth,colOffset] :style="padding">
+       <div class="col" >
+           <slot></slot>
+       </div>
     </div>
 </template>
 
@@ -11,18 +13,30 @@
         data() {
             return {
                 colWidth: this.span && `col-${this.span}`,  //判断span是否存在
-                colOffset: this.offset && `offset-${this.offset}`
+                colOffset: this.offset && `offset-${this.offset}`,
+                gutter:0
            }
-        }
+        },
+        computed:{
+          padding(){
+              return `padding:0 ${this.gutter/2}px`
+          }
+        },
+
     }
 </script>
 
 <style scoped lang="scss">
-    .col {
+    .col-wrapper {
         width: 50%;
         height: 100px;
-        background: bisque;
+
+    }
+    .col{
         border: 1px solid blue;
+        height: 100%;
+        background: bisque;
+
     }
 
 
