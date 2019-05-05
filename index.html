@@ -18,16 +18,15 @@
         [--root] {--button-bg: white;}
         button{background: var(--button-bg);}
         */
-
-        #app {
-            padding: 10px;
+        .button-wrapper {
+            margin: 10px;
         }
 
         .input-wrapper {
             margin: 10px;
         }
 
-        .grid-wrapper{
+        .grid-wrapper {
             margin: 10px;
             border: 1px solid red;
         }
@@ -35,25 +34,28 @@
 </head>
 <body>
 <div id="app">
+    <div class="layout-wrapper">
+        <g-layout>
+            <g-header>Header</g-header>
+            <g-layout>
+                <g-sider>Sider</g-sider>
+                <g-content>Content</g-content>
+
+            </g-layout>
+            <g-footer>Footer</g-footer>
+        </g-layout>
+    </div>
+
     <div class="grid-wrapper">
         <g-row>
-            <g-col >1</g-col>
-            <g-col >2</g-col>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
         </g-row>
 
         <g-row gutter="20">
-            <g-col >1</g-col>
-            <g-col >2</g-col>
-            <g-col >3</g-col>
-        </g-row>
-
-        <g-row gutter="30">
-            <g-col >1</g-col>
-            <g-col >2</g-col>
-
-            <g-col >3</g-col>
-            <g-col >4</g-col>
-            <g-col >5</g-col>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
         </g-row>
 
         <g-row>
@@ -68,15 +70,11 @@
             <g-col span="4" offset="4">4</g-col>
         </g-row>
 
-        <g-row align="center">
-            <g-col span="8">8</g-col>
-            <g-col span="6" >6</g-col>
-            <g-col span="4" >4</g-col>
-        </g-row>
+
         <g-row align="right">
             <g-col span="8">8</g-col>
-            <g-col span="6" >6</g-col>
-            <g-col span="4" >4</g-col>
+            <g-col span="6">6</g-col>
+            <g-col span="4">4</g-col>
         </g-row>
     </div>
 
@@ -90,14 +88,18 @@
         <g-input value="张三" :error="errorInfo"></g-input>
     </div>
 
-    <g-button @click="alert">按钮</g-button>
-    <g-button icon="like">点赞</g-button>
-    <g-button icon="setting">设置</g-button>
-    <g-button icon="setting" icon-position="right">设置</g-button>
-    <g-button icon="download" :loading="true">下载</g-button>
-    <g-button icon="setting" :circle="true"></g-button>
-    <g-button icon="download" :circle="true" :loading="true"></g-button>
 
+    <div class="button-wrapper">
+
+        <g-button @click="alert">按钮</g-button>
+        <g-button icon="like">点赞</g-button>
+        <g-button icon="setting">设置</g-button>
+        <g-button icon="setting" icon-position="right">设置</g-button>
+        <g-button icon="download" :loading="true">下载</g-button>
+        <g-button icon="setting" :circle="true"></g-button>
+        <g-button icon="download" :circle="true" :loading="true"></g-button>
+
+    </div>
 
 </div>
 <script src="./src/main.js"></script>
