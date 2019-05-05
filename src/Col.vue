@@ -1,8 +1,8 @@
 <template>
-    <div class="col-wrapper" :class=[colWidth,colOffset] :style="padding">
-       <div class="col" >
-           <slot></slot>
-       </div>
+    <div class="col-wrapper" :class=[colWidth,colOffset] :style="gutter && padding">
+        <div class="col">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -12,17 +12,21 @@
         props: ['span', 'offset'],
         data() {
             return {
-                colWidth: this.span && `col-${this.span}`,  //判断span是否存在
-                colOffset: this.offset && `offset-${this.offset}`,
-                gutter:0
-           }
-        },
-        computed:{
-          padding(){
-              return `padding:0 ${this.gutter/2}px`
-          }
-        },
 
+                gutter: 0
+            }
+        },
+        computed: {
+            padding() {
+                return `padding:0 ${this.gutter / 2}px`
+            },
+            colWidth() {
+                return this.span && `col-${this.span}`
+            },
+            colOffset() {
+                return this.offset && `offset-${this.offset}`
+            }
+        },
     }
 </script>
 
@@ -32,7 +36,8 @@
         height: 100px;
 
     }
-    .col{
+
+    .col {
         border: 1px solid blue;
         height: 100%;
         background: bisque;
