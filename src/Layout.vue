@@ -14,7 +14,7 @@
         },
         mounted() {
             this.$children.forEach((vm)=>{
-                console.log(vm.$options.name);    //组件name属性使用
+                  //组件name属性使用
                 if(vm.$options.name==='Sider'){
                     this.isRow=true
                 }

@@ -8,7 +8,8 @@ import Header from './Header'
 import Content from './Content'
 import Sider from './Sider'
 import Footer from './Footer'
-
+import Toast from './Toast'
+import Plugin from './PlugIn'
 
 
 
@@ -21,7 +22,8 @@ Vue.component('d-header', Header)
 Vue.component('d-content', Content)
 Vue.component('d-sider', Sider)
 Vue.component('d-footer', Footer)
-
+Vue.component('d-toast', Toast)
+Vue.use(Plugin)      //引入新的原型
 
 new Vue({
     el: '#app',
@@ -32,31 +34,13 @@ new Vue({
     methods: {
         alert() {
             alert('我被点了')
+        },
+        showToast(){
+            this.$toast('哈哈哈')
         }
     }
 })
 
-
-import chai from 'chai'
-const expect = chai.expect
-
-{   //测试icon位置
-    const Constructor = Vue.extend(Button)     //声明Vue组件构造器
-    const button = new Constructor({           //创建Vue组件实例并传入参数
-        propsData: {
-            icon: 'setting',
-            iconPosition: 'right'
-        },
-    })
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    button.$mount(div)
-    let svg = button.$el.querySelector('svg')
-    let {order} = window.getComputedStyle(svg)  //获取CSS属性
-    expect(order).to.eq('1')
-    button.$el.remove()       //
-    button.$destroy()         //
-}
 
 
 

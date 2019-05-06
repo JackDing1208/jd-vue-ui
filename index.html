@@ -30,12 +30,20 @@
             margin: 10px;
             border: 1px solid red;
         }
+
+        .toast-wrapper{
+            width: 50%;
+            margin: 0 auto;
+            height: 100vh;
+            border: 1px solid red;
+        }
     </style>
 </head>
 <body>
 <div id="app">
     <div class="toast-wrapper">
-        <button></button>
+        <button @click="showToast">点我</button>
+        <d-toast>哈哈哈</d-toast>
     </div>
 
 
