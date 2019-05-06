@@ -12,15 +12,15 @@ import Footer from './Footer'
 
 
 
-Vue.component('g-button', Button)
-Vue.component('g-input', Input)
-Vue.component('g-row', Row)
-Vue.component('g-col', Col)
-Vue.component('g-layout', Layout)
-Vue.component('g-header', Header)
-Vue.component('g-content', Content)
-Vue.component('g-sider', Sider)
-Vue.component('g-footer', Footer)
+Vue.component('d-button', Button)
+Vue.component('d-input', Input)
+Vue.component('d-row', Row)
+Vue.component('d-col', Col)
+Vue.component('d-layout', Layout)
+Vue.component('d-header', Header)
+Vue.component('d-content', Content)
+Vue.component('d-sider', Sider)
+Vue.component('d-footer', Footer)
 
 
 new Vue({

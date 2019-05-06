@@ -1,7 +1,7 @@
 <template>
     <button class="click" :class="[{circle:circle},`icon-${iconPosition}`]" @click="loadingStatus">
-        <g-icon v-if="icon && (!isLoading ||!loading)" :name="icon"></g-icon>
-        <g-icon class="loading" v-if="loading && isLoading" name="loading"></g-icon>
+        <d-icon v-if="icon && (!isLoading ||!loading)" :name="icon"></d-icon>
+        <d-icon class="loading" v-if="loading && isLoading" name="loading"></d-icon>
 
         <div v-if="$slots.default" class="content">
             <slot>默认内容</slot>
@@ -14,7 +14,7 @@
     export default {
         // props:['icon','icon-position'],
         components:{
-          'g-icon':Icon
+          'd-icon':Icon
         },
         props: {
             icon: {},

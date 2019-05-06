@@ -34,70 +34,75 @@
 </head>
 <body>
 <div id="app">
-    <div class="layout-wrapper">
-        <g-layout>
-            <g-header>Header</g-header>
-            <g-layout>
-                <g-sider>Sider</g-sider>
-                <g-content>Content</g-content>
+    <div class="toast-wrapper">
+        <button></button>
+    </div>
 
-            </g-layout>
-            <g-footer>Footer</g-footer>
-        </g-layout>
+
+
+    <div class="layout-wrapper">
+        <d-layout>
+            <d-header>Header</d-header>
+            <d-layout>
+                <d-sider>Sider</d-sider>
+                <d-content>Content</d-content>
+
+            </d-layout>
+            <d-footer>Footer</d-footer>
+        </d-layout>
     </div>
 
     <div class="grid-wrapper">
-        <g-row>
-            <g-col>1</g-col>
-            <g-col>2</g-col>
-        </g-row>
+        <d-row>
+            <d-col>1</d-col>
+            <d-col>2</d-col>
+        </d-row>
 
-        <g-row gutter="20">
-            <g-col>1</g-col>
-            <g-col>2</g-col>
-            <g-col>3</g-col>
-        </g-row>
+        <d-row gutter="20">
+            <d-col>1</d-col>
+            <d-col>2</d-col>
+            <d-col>3</d-col>
+        </d-row>
 
-        <g-row>
-            <g-col span="8">8</g-col>
-            <g-col span="16">16</g-col>
-        </g-row>
-
-
-        <g-row>
-            <g-col span="8">8</g-col>
-            <g-col span="6" offset="2">6</g-col>
-            <g-col span="4" offset="4">4</g-col>
-        </g-row>
+        <d-row>
+            <d-col span="8">8</d-col>
+            <d-col span="16">16</d-col>
+        </d-row>
 
 
-        <g-row align="right">
-            <g-col span="8">8</g-col>
-            <g-col span="6">6</g-col>
-            <g-col span="4">4</g-col>
-        </g-row>
+        <d-row>
+            <d-col span="8">8</d-col>
+            <d-col span="6" offset="2">6</d-col>
+            <d-col span="4" offset="4">4</d-col>
+        </d-row>
+
+
+        <d-row align="right">
+            <d-col span="8">8</d-col>
+            <d-col span="6">6</d-col>
+            <d-col span="4">4</d-col>
+        </d-row>
     </div>
 
 
     <div class="input-wrapper">
-        <g-input value="张三"></g-input>
-        <g-input v-model="message"></g-input>
-        {{message}}
-        <g-input value="disabled" disabled></g-input>
-        <g-input value="readonly" readonly></g-input>
-        <g-input value="张三" :error="errorInfo"></g-input>
+        <d-input value="张三"></d-input>
+        <d-input v-model="message"></d-input>
+        <d-input value="disabled" disabled></d-input>
+        <d-input value="readonly" readonly></d-input>
+        <d-input value="张三" :error="errorInfo"></d-input>
     </div>
 
 
     <div class="button-wrapper">
 
-        <g-button @click="alert">按钮</g-button>
-        <g-button icon="like">点赞</g-button>
-        <g-button icon="setting">设置</g-button>
-        <g-button icon="setting" icon-position="right">设置</g-button>
-        <g-button icon="download" :loading="true">下载</g-button>
-        <g-button icon="setting" :circle="true"></g-button>
-        <g-button icon="download" :circle="true" :loading="true"></g-button>
+        <d-button @click="alert">按钮</d-button>
+        <d-button icon="like">点赞</d-button>
+        <d-button icon="setting">设置</d-button>
+        <d-button icon="setting" icon-position="right">设置</d-button>
+        <d-button icon="download" :loading="true">下载</d-button>
+        <d-button icon="setting" :circle="true"></d-button>
+        <d-button icon="download" :circle="true" :loading="true"></d-button>
 
     </div>
 
