@@ -35,9 +35,9 @@ new Vue({
             alert('我被点了')
         },
         showToast() {
-            this.$toast('<b>哈哈哈</b>', {
+            this.$toast('哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈', {
                     isAuto: false,
-                    position: 'top',
+                    position: 'middle',
                     closeButton: {
                         text:'关闭',
                         callback(){

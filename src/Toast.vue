@@ -1,8 +1,9 @@
 <template>
     <div class="toast" :class="positionClass">
         <div class="text" v-html="$slots.default"></div>
-        <div class="line" v-if="closeButton.text"></div>
-        <div class="close" @click="closeClick" v-if="closeButton.text">{{closeButton.text}}</div>
+        <div class="close" @click="closeClick" v-if="closeButton.text">
+            <div class="closeText">{{closeButton.text}}</div>
+        </div>
     </div>
 </template>
 
@@ -67,26 +68,30 @@
     $toast-color: #ddd;
 
 
-    .line {
-        border-left: 1px solid #dddddd;
+    .text {
         height: 100%;
-        margin: 0 0.5em;
+        margin: 0.5em 0.5em;
+
     }
 
     .close {
-        white-space: nowrap;
+        border-left: 1px solid #dddddd;
+        padding: 0.5em 0.5em;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        .closeText{
+          white-space: nowrap;
+        }
     }
 
     .toast {
         line-height: 1.8;
-        max-width: 200px;
-        padding: 0.5em 1em;
+        max-width: 25vw;      //直接挂在到body中，父元素是body
         font-size: $toast-font-size;
         background: $toast-background;
         color: $toast-color;
         display: flex;
-        align-items: center;
         position: fixed;
         left: 50%;
         border-radius: 4px;
