@@ -35,7 +35,7 @@ new Vue({
             alert('我被点了')
         },
         showToast() {
-            this.$toast('哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
+            this.$toast('哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
                 {
                     isAuto: false,
                     position: 'middle',

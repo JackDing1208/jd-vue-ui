@@ -75,7 +75,7 @@
     }
 
     .close {
-        border-left: 1px solid #dddddd;
+        border-left: 1px solid #999999;
         padding: 0.5em 0.5em;
         cursor: pointer;
         display: flex;
@@ -100,16 +100,34 @@
         &.position-top {
             top: 0%;
             transform: translate(-50%, 0%);
+            animation: slide-down 0.5s;
         }
-
         &.position-middle {
             top: 50%;
             transform: translate(-50%, -50%);
-        }
+            animation: fade-in 0.5s;
 
+        }
         &.position-bottom {
             bottom: 0;
             transform: translate(-50%, 0%);
+            animation: slide-up 0.5s;
+
         }
+
     }
+    @keyframes slide-down {
+        0%{opacity: 0;transform: translate(-50%,-100% )}
+        100%{opacity: 1;transform: translate(-50%,0% )}
+    }
+
+    @keyframes slide-up {
+        0%{opacity: 0;transform: translate(-50%,100% )}
+        100%{opacity: 1;transform: translate(-50%,0% )}
+    }
+    @keyframes fade-in {
+        0%{opacity: 0;}
+        100%{opacity: 1;}
+    }
+
 </style>
