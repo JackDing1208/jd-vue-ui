@@ -1,6 +1,6 @@
 <template>
     <div class="toast" :class="positionClass">
-        <slot></slot>
+        <div class="text" v-html="$slots.default"></div>
         <div class="line" v-if="closeButton.text"></div>
         <div class="close" @click="closeClick" v-if="closeButton.text">{{closeButton.text}}</div>
     </div>
@@ -9,6 +9,7 @@
 <script>
     export default {
         name: "Toast",
+
         props: {
 
             isAuto: {

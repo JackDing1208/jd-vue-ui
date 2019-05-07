@@ -35,13 +35,13 @@ new Vue({
             alert('我被点了')
         },
         showToast() {
-            this.$toast('哈哈哈哈哈', {
+            this.$toast('<b>哈哈哈</b>', {
                     isAuto: false,
                     position: 'top',
                     closeButton: {
-                        text:'好的',
+                        text:'关闭',
                         callback(){
-                            alert('OJBK')
+                            console.log('我被关闭了')
                         }
                     }
                 }
