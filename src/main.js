@@ -12,7 +12,6 @@ import Toast from './Toast'
 import Plugin from './PlugIn'
 
 
-
 Vue.component('d-button', Button)
 Vue.component('d-input', Input)
 Vue.component('d-row', Row)
@@ -29,15 +28,24 @@ new Vue({
     el: '#app',
     data: {
         message: 'hello,world!',
-        errorInfo:'名字不能少于五个字'
+        errorInfo: '名字不能少于五个字'
     },
     methods: {
         alert() {
             alert('我被点了')
         },
-        showToast(){
-            this.$toast('哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈')
-
+        showToast() {
+            this.$toast('哈哈哈哈哈', {
+                    isAuto: false,
+                    position: 'top',
+                    closeButton: {
+                        text:'好的',
+                        callback(){
+                            alert('OJBK')
+                        }
+                    }
+                }
+            )
         }
     }
 })

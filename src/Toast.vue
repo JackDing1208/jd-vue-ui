@@ -1,8 +1,8 @@
 <template>
     <div class="toast" :class="positionClass">
         <slot></slot>
-        <div class="line"></div>
-        <div class="close" @click="closeClick" v-if="closeButton">{{closeButton.text}}</div>
+        <div class="line" v-if="closeButton.text"></div>
+        <div class="close" @click="closeClick" v-if="closeButton.text">{{closeButton.text}}</div>
     </div>
 </template>
 
@@ -10,6 +10,7 @@
     export default {
         name: "Toast",
         props: {
+
             isAuto: {
                 type: Boolean,
                 default: true
@@ -23,14 +24,11 @@
                 default: 'middle'
             },
             closeButton: {
-                type:Object,    //default需要用函数return对象
+                type: Object,    //default需要用函数return对象
                 default: function () {
                     return {
-                        text:'关闭',
-                        callback(){
-                            console.log('我被关闭了')
-                        }
-
+                        text: '',
+                        callback: {}
                     }
                 }
             }
@@ -41,9 +39,11 @@
             }
         },
         methods: {
-            closeClick(){
+            closeClick() {
                 this.disappear()
-                this.closeButton.callback()
+                if (this.closeButton.text && typeof this.closeButton.callback === "function") {
+                    this.closeButton.callback(this)  //可以把toast实例传参给callback
+                }
             },
             disappear() {
                 this.$el.remove()
