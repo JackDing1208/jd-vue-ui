@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Button from '../src/Button'
 import chai from 'chai'
 import spies from 'chai-spies'
+
 const expect = chai.expect;
 chai.use(spies)
 
@@ -42,7 +43,6 @@ describe('Button', () => {
     })
     it('可以设置circle.', () => {
         const div = document.createElement('div')
-        document.body.appendChild(div)
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
             propsData: {
@@ -50,8 +50,9 @@ describe('Button', () => {
                 circle: true
             }
         }).$mount(div)
+        document.body.appendChild(div)
         const click = vm.$el
-        expect(getComputedStyle(click).borderRadius).to.eq('50%')
+        expect(click.classList.contains('circle')).to.eq(true)
         vm.$el.remove()
         vm.$destroy()
     })
@@ -92,7 +93,8 @@ describe('Button', () => {
             },
         })
         vm.$mount()
-        let spy = chai.spy(function () { })   //引入可被监测的spy函数
+        let spy = chai.spy(function () {
+        })   //引入可被监测的spy函数
         vm.$on('click', spy)
         let click = vm.$el
         click.click()
