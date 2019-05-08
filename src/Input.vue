@@ -10,7 +10,7 @@
                @focus="$emit('focus',$event.target.value)"
         >
         <template v-if="error">
-            <g-icon class="icon" name="alert"></g-icon>
+            <d-icon class="icon" name="alert"></d-icon>
             <span class="errorInfo">{{error}}</span>
         </template>
     </div>
@@ -23,7 +23,7 @@
         name: "Input",
         props: ['value', 'disabled', 'readonly', 'error'],
         components: {
-            'g-icon': Icon
+            'd-icon': Icon
         }
     }
 </script>
@@ -79,8 +79,6 @@
                 border-color: #bbb;
                 color: #bbb;
             }
-
         }
-
     }
 </style>

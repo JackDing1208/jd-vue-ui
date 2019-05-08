@@ -48,6 +48,9 @@ new Vue({
                 }
             )
         }
+    },
+    mounted(){
+        console.log(this.$el);
     }
 })
 
