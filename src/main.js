@@ -10,6 +10,12 @@ import Sider from './Sider'
 import Footer from './Footer'
 import Toast from './Toast'
 import Plugin from './PlugIn'
+import Tab from './Tab'
+import TabHead from './Tab-head'
+import TabBody from './Tab-body'
+import TabItem from './Tab-item'
+import TabPane from './Tab-pane'
+
 
 
 Vue.component('d-button', Button)
@@ -23,6 +29,15 @@ Vue.component('d-sider', Sider)
 Vue.component('d-footer', Footer)
 Vue.component('d-toast', Toast)
 Vue.use(Plugin)      //引入新的原型
+Vue.component('d-tab', Tab)
+Vue.component('d-tab-body', TabBody)
+Vue.component('d-tab-head', TabHead)
+Vue.component('d-tab-item', TabItem)
+Vue.component('d-tab-pane', TabPane)
+
+
+
+
 
 new Vue({
     el: '#app',
@@ -49,9 +64,6 @@ new Vue({
             )
         }
     },
-    mounted(){
-        console.log(this.$el);
-    }
 })
 
 

@@ -31,21 +31,42 @@
             border: 1px solid red;
         }
 
-        .toast-wrapper{
+        .toast-wrapper {
             width: 50%;
             margin: 0 auto;
-            height: 100vh;
+            height: 50vh;
             border: 1px solid red;
+        }
+        .tab-wrapper{
+            width: 50%;
+            margin: 0 auto;
+            height: 50vh;
+
         }
     </style>
 </head>
 <body>
 <div id="app">
-    <div class="toast-wrapper">
-        <button @click="showToast">点我</button>
+    <div class="tab-wrapper">
+        <d-tab selected="sport">
+            <d-tab-head>
+                <d-tab-item name="finance">经济</d-tab-item>
+                <d-tab-item name="sport">体育</d-tab-item>
+                <d-tab-item name="fun">娱乐</d-tab-item>
+                <d-button icon="setting">设置</d-button>
+            </d-tab-head>
+            <d-tab-body>
+                <d-tab-pane name="finance">我是经济新闻</d-tab-pane>
+                <d-tab-pane name="sport">我是体育新闻</d-tab-pane>
+                <d-tab-pane name="fun">我是娱乐新闻</d-tab-pane>
+            </d-tab-body>
+        </d-tab>
     </div>
 
 
+    <div class="toast-wrapper">
+        <button @click="showToast">点我</button>
+    </div>
 
     <div class="layout-wrapper">
         <d-layout>
