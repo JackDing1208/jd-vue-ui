@@ -15,6 +15,7 @@ import TabHead from './Tab-head'
 import TabBody from './Tab-body'
 import TabItem from './Tab-item'
 import TabPane from './Tab-pane'
+import xtest from './xtest'
 
 
 Vue.component('d-button', Button)
@@ -33,10 +34,14 @@ Vue.component('d-tab-body', TabBody)
 Vue.component('d-tab-head', TabHead)
 Vue.component('d-tab-item', TabItem)
 Vue.component('d-tab-pane', TabPane)
+Vue.component('xtest', xtest)
 
+
+import store from '../state/index'
 
 new Vue({
     el: '#app',
+    store:store,
     data: {
         message: 'hello,world!',
         errorInfo: '名字不能少于五个字'
