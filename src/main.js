@@ -17,7 +17,6 @@ import TabItem from './Tab-item'
 import TabPane from './Tab-pane'
 
 
-
 Vue.component('d-button', Button)
 Vue.component('d-input', Input)
 Vue.component('d-row', Row)
@@ -36,9 +35,6 @@ Vue.component('d-tab-item', TabItem)
 Vue.component('d-tab-pane', TabPane)
 
 
-
-
-
 new Vue({
     el: '#app',
     data: {
@@ -55,8 +51,8 @@ new Vue({
                     isAuto: false,
                     position: 'middle',
                     closeButton: {
-                        text:'关闭',
-                        callback(){
+                        text: '关闭',
+                        callback() {
                             console.log('我被关闭了')
                         }
                     }
@@ -65,7 +61,6 @@ new Vue({
         }
     },
 })
-
 
 
 

@@ -9,20 +9,21 @@
 
     export default {
         name: "Tab",
-        props: {
-            selected: {
-                type: String,
-                required: true
-            }
-        },
+
         data() {
             return {
-                eventBus: new Vue()       //自己使用的eventBus
+                eventBus: new Vue()       //给自己使用的eventBus
             }
         },
         provide() {
             return {
                 eventBus: this.eventBus    //给全部后代组件提供eventBus
+            }
+        },
+        props: {
+            selected: {
+                type: String,
+                required: true
             }
         },
         mounted() {                      //把需要的初始值传出去

@@ -19,11 +19,9 @@
         mounted() {
             this.eventBus.$on('update:selected', (value, el) => {
                 let {width,height,top,left}=el.getBoundingClientRect()
-                console.log(width,height,top,left)
                 this.$refs.line.style.width=width+'px'
                 this.$refs.line.style.left=left+'px'
                 this.$refs.line.style.top=(top+height)+'px'
-
            })
         }
     }
@@ -42,7 +40,7 @@
         .line {
             background: #6ea6e5;
             height: 2px;
-            position: absolute;
+            position:absolute;
             transition: all 0.5s;
         }
 
