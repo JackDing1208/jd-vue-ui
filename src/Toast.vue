@@ -66,12 +66,13 @@
     $toast-font-size: 14px;
     $toast-background: #333;
     $toast-color: #ddd;
-
+    @mixin debug($color:red) {
+        border: 1px solid $color;
+    }
 
     .text {
         height: 100%;
         margin: 0.5em 0.5em;
-
     }
 
     .close {
@@ -80,14 +81,15 @@
         cursor: pointer;
         display: flex;
         align-items: center;
-        .closeText{
-          white-space: nowrap;
+
+        .closeText {
+            white-space: nowrap;
         }
     }
 
     .toast {
         line-height: 1.8;
-        max-width: 25vw;      //直接挂在到body中，父元素是body
+        max-width: 25vw; //直接挂在到body中，父元素是body
         font-size: $toast-font-size;
         background: $toast-background;
         color: $toast-color;
@@ -102,12 +104,14 @@
             transform: translate(-50%, 0%);
             animation: slide-down 0.5s;
         }
+
         &.position-middle {
             top: 50%;
             transform: translate(-50%, -50%);
             animation: fade-in 0.5s;
 
         }
+
         &.position-bottom {
             bottom: 0;
             transform: translate(-50%, 0%);
@@ -116,18 +120,37 @@
         }
 
     }
+
     @keyframes slide-down {
-        0%{opacity: 0;transform: translate(-50%,-100% )}
-        100%{opacity: 1;transform: translate(-50%,0% )}
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -100%)
+        }
+        100% {
+            opacity: 1;
+            transform: translate(-50%, 0%)
+        }
     }
 
     @keyframes slide-up {
-        0%{opacity: 0;transform: translate(-50%,100% )}
-        100%{opacity: 1;transform: translate(-50%,0% )}
+        0% {
+            opacity: 0;
+            transform: translate(-50%, 100%)
+        }
+        100% {
+            opacity: 1;
+            transform: translate(-50%, 0%)
+        }
     }
+
     @keyframes fade-in {
-        0%{opacity: 0;}
-        100%{opacity: 1;}
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
+
 
 </style>
