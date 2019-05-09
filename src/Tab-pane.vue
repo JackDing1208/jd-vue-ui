@@ -24,11 +24,6 @@
                 this.isActive = this.name === value;
             })
         },
-        beforeMount() {
-            if(this.name===this.eventBus.name){
-                this.isActive=true
-            }
-        }
     }
 
 </script>

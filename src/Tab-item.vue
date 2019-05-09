@@ -19,32 +19,28 @@
             }
         },
         inject: ['eventBus'],
-        computed:{
-          addClass(){
-              return {active:this.isActive}
-          }
+        computed: {
+            addClass() {
+                return {active: this.isActive}
+            }
         },
         methods: {
             select() {
-                this.eventBus.$emit('update:selected', this.name)
+                this.eventBus.$emit('update:selected', this.name, this.$el)
             }
         },
         mounted() {
             this.eventBus.$on('update:selected', (value) => {
                 this.isActive = this.name === value;
+
             })
         },
-        beforeMount() {
-            if(this.name===this.eventBus.name){
-                this.isActive=true
-            }
-        }
     }
 </script>
 
 <style scoped lang="scss">
     $tab-item-font: 16px;
-    $active-color:#6ea6e5;
+    $active-color: #6ea6e5;
     .item {
         font-size: $tab-item-font;
         padding: 0.3em 1em;
@@ -56,7 +52,7 @@
 
     .active {
         color: $active-color;
-        border-bottom: 1px solid $active-color;
+        font-weight: bold;
     }
 
 </style>
