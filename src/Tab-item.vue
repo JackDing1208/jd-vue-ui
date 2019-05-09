@@ -56,7 +56,7 @@
 
     .active {
         color: $active-color;
-
+        border-bottom: 1px solid $active-color;
     }
 
 </style>

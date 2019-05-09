@@ -1,32 +1,48 @@
 <template>
     <div class="head">
-        <slot></slot>
+        <div class="slot-wrapper">
+            <slot></slot>
+        </div>
+        <div class="line"></div>
     </div>
 </template>
 
 <script>
     import Button from './Button'
+
     export default {
         name: "Tab-head",
-        components:{
-            'd-button':Button
+        components: {
+            'd-button': Button
         },
-        inject:['eventBus']
+        inject: ['eventBus']
     }
 </script>
 
 <style scoped lang="scss">
-    @mixin debug{
+    @mixin debug {
         border: 1px solid red;
     }
-    .head{
+
+    .head {
         border-bottom: 1px solid #999999;
         display: flex;
-        align-items: center;
-        padding: 5px 0.5em;
+        flex-direction: column;
 
-        button{
-            margin-left: auto;
+        .line {
+            background: #6ea6e5;
+            height: 0px;
+
         }
+
+        .slot-wrapper {
+            display: flex;
+            align-items: center;
+
+            button {
+                margin-left: auto;
+            }
+        }
+
     }
 </style>
