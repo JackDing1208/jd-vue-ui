@@ -61,5 +61,6 @@
         margin: 0 auto;
         border: 1px solid #999;
         border-radius: 4px;
+        border-bottom: none;
     }
 </style>

@@ -1,6 +1,10 @@
 <template>
     <div class="item">
-        <div @click="toggle" class="title">{{titleArrow}}</div>
+        <div class="title-wrapper" @click="toggle">
+            <d-icon name="arrow-open" v-if="arrow && isOpen "></d-icon>
+            <d-icon name="arrow-close" v-if="arrow && !isOpen"></d-icon>
+            <div class="title">{{title}}</div>
+        </div>
         <div v-if="isOpen" class="content">
             <slot></slot>
         </div>
@@ -9,6 +13,8 @@
 </template>
 
 <script>
+    import Icon from './Icon'
+
     export default {
         name: "Collapse-item",
         props: {
@@ -23,22 +29,13 @@
 
         },
         inject: ['eventBus'],
+        components: {
+            'd-icon': Icon
+        },
         data() {
             return {
                 isOpen: false,
                 arrow: false
-            }
-        },
-        computed: {
-            titleArrow() {
-                if (this.arrow && this.isOpen) {
-                    return `∨ ${this.title}`
-                } else if (this.arrow && !this.isOpen) {
-                    return `〉 ${this.title}`
-                } else {
-                    return this.title
-                }
-
             }
         },
         methods: {
@@ -69,22 +66,28 @@
     .item {
         font-size: $collapse-font-size;
 
-        .title {
-            line-height: 32px;
-            padding: 0 0.5em;
-            cursor: pointer;
-            border-bottom: 1px solid #999999;
+        &:last-child:last-child {
+            border-bottom: none ;
         }
+
+        .title-wrapper {
+            padding: 0 0.5em;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #999999;
+            cursor: pointer;
+
+            .title {
+                line-height: 32px;
+            }
+        }
+
 
         .content {
             padding: 0 0.5em;
             color: #999999;
             border-bottom: 1px solid #999999;
             height: 200px;
-
-            &:last-child {
-                border-bottom: 1px solid transparent;
-            }
         }
     }
 </style>
