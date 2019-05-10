@@ -87,7 +87,6 @@
             padding: 0 0.5em;
             color: #999999;
             border-bottom: 1px solid #999999;
-            height: 200px;
         }
     }
 </style>

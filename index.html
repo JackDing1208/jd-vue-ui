@@ -37,12 +37,14 @@
             height: 50vh;
             border: 1px solid red;
         }
-        .tab-wrapper{
+
+        .tab-wrapper {
             width: 50%;
             margin: 0 auto;
             height: 50vh;
         }
-        .collapse-wrapper{
+
+        .collapse-wrapper {
             width: 70%;
             margin: 0 auto;
             height: 50vh;
@@ -54,10 +56,10 @@
 <div id="app">
 
     <div class="collapse-wrapper">
-        <d-collapse :selected.sync="currentSelected" arrow single>
-            <d-collapse-item title="标题1" name="1">第一个内容</d-collapse-item>
-            <d-collapse-item title="标题2" name="2">第二个内容</d-collapse-item>
-            <d-collapse-item title="标题3" name="3">第三个内容</d-collapse-item>
+        <d-collapse :selected.sync="currentSelected">
+            <d-collapse-item title="标题1" name="1">第一个内容 <br><br><br><br><br><br></d-collapse-item>
+            <d-collapse-item title="标题2" name="2">第二个内容 <br><br><br><br><br><br></d-collapse-item>
+            <d-collapse-item title="标题3" name="3">第三个内容 <br><br><br><br><br><br></d-collapse-item>
         </d-collapse>
     </div>
 
