@@ -12,7 +12,7 @@
         data() {
             return {
                 eventBus: new Vue(),
-                selectedCopy:this.selected    //避免直接操作props
+                selectedCopy:JSON.parse(JSON.stringify(this.selected))    //深拷贝避免直接操作props
             }
         },
         props: {
@@ -36,7 +36,6 @@
                 } else {
                     this.selectedCopy.push(name)
                 }
-
                 this.eventBus.$emit('update:selected', this.selectedCopy)
                 this.$emit('update:selected', this.selectedCopy)   //将数据双向绑定
 
@@ -44,7 +43,6 @@
             this.eventBus.$on('minusSelected', (name) => {
                 let index = this.selectedCopy.indexOf(name)
                 this.selectedCopy.splice(index, 1)
-
                 this.eventBus.$emit('update:selected', this.selectedCopy)
                 this.$emit('update:selected', this.selectedCopy)
             })
