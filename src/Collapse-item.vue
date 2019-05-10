@@ -1,6 +1,6 @@
 <template>
     <div class="item">
-        <div @click="toggle" class="title">{{title}}</div>
+        <div @click="toggle" class="title">{{titleArrow}}</div>
         <div v-if="isOpen" class="content">
             <slot></slot>
         </div>
@@ -11,6 +11,11 @@
 <script>
     export default {
         name: "Collapse-item",
+        data() {
+            return {
+                arrow: false
+            }
+        },
         props: {
             title: {
                 type: String,
@@ -19,7 +24,8 @@
             name: {
                 type: String,
                 required: true
-            }
+            },
+
         },
         inject: ['eventBus'],
         data() {
@@ -27,22 +33,35 @@
                 isOpen: false
             }
         },
+        computed: {
+            titleArrow() {
+                if (this.arrow && this.isOpen) {
+                    return `∨ ${this.title}`
+                } else if (this.arrow && !this.isOpen) {
+                    return `〉 ${this.title}`
+                } else {
+                    return this.title
+                }
+
+            }
+        },
         methods: {
             toggle() {
                 if (!this.isOpen) {
                     this.eventBus.$emit('addSelected', this.name)
-                }else if(this.isOpen){
-                    this.eventBus.$emit('minusSelected',this.name)
+                } else if (this.isOpen) {
+                    this.eventBus.$emit('minusSelected', this.name)
                 }
 
             }
         },
         mounted() {
-            this.eventBus.$on('update:selected', (names) => {
+            this.eventBus.$on('update:selected', (names, arrow) => {
+                this.arrow = arrow
                 if (names.includes(this.name)) {
-                    this.isOpen=true
-                } else if(!names.includes(this.name)){
-                    this.isOpen=false
+                    this.isOpen = true
+                } else if (!names.includes(this.name)) {
+                    this.isOpen = false
                 }
             })
         }
@@ -57,11 +76,19 @@
         .title {
             line-height: 32px;
             padding: 0 0.5em;
+            cursor: pointer;
+            border-bottom: 1px solid #999999;
         }
 
         .content {
             padding: 0 0.5em;
             color: #999999;
+            border-bottom: 1px solid #999999;
+            height: 200px;
+
+            &:last-child {
+                border-bottom: 1px solid transparent;
+            }
         }
     }
 </style>

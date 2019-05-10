@@ -12,7 +12,7 @@
         data() {
             return {
                 eventBus: new Vue(),
-                selectedCopy:JSON.parse(JSON.stringify(this.selected))    //深拷贝避免直接操作props
+                selectedCopy: JSON.parse(JSON.stringify(this.selected))    //深拷贝避免直接操作props
             }
         },
         props: {
@@ -21,14 +21,19 @@
                 type: Array,
             },
             single: {
-                type: Boolean
+                type: Boolean,
+                default: false
+            },
+            arrow: {
+                type: Boolean,
+                default: false
             }
         },
         provide() {
             return {eventBus: this.eventBus}
         },
         mounted() {
-            this.eventBus.$emit('update:selected', this.selectedCopy)
+            this.eventBus.$emit('update:selected', this.selectedCopy,this.arrow)
 
             this.eventBus.$on('addSelected', (name) => {
                 if (this.single) {
@@ -54,5 +59,7 @@
     .collapse {
         width: 60%;
         margin: 0 auto;
+        border: 1px solid #999;
+        border-radius: 4px;
     }
 </style>
