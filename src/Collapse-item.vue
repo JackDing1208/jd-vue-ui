@@ -66,27 +66,32 @@
     .item {
         font-size: $collapse-font-size;
 
-        &:last-child:last-child {
-            border-bottom: none ;
-        }
-
-        .title-wrapper {
-            padding: 0 0.5em;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #999999;
-            cursor: pointer;
-
-            .title {
-                line-height: 32px;
+        &:last-child {
+            > div:last-child {
+                border-radius: 4px;
             }
         }
 
+    }
 
-        .content {
-            padding: 0 0.5em;
-            color: #999999;
-            border-bottom: 1px solid #999999;
+    .title-wrapper {
+        padding: 0 0.5em;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #999999;
+        cursor: pointer;
+
+        .title {
+            line-height: 32px;
         }
     }
+
+
+    .content {
+        padding: 0 0.5em;
+        color: #999999;
+        border-bottom: 1px solid #999999;
+    }
+
+
 </style>
