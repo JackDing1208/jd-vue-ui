@@ -11,11 +11,6 @@
 <script>
     export default {
         name: "Collapse-item",
-        data() {
-            return {
-                arrow: false
-            }
-        },
         props: {
             title: {
                 type: String,
@@ -30,7 +25,8 @@
         inject: ['eventBus'],
         data() {
             return {
-                isOpen: false
+                isOpen: false,
+                arrow: false
             }
         },
         computed: {

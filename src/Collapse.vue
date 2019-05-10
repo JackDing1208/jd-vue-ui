@@ -41,14 +41,14 @@
                 } else {
                     this.selectedCopy.push(name)
                 }
-                this.eventBus.$emit('update:selected', this.selectedCopy)
+                this.eventBus.$emit('update:selected', this.selectedCopy,this.arrow)
                 this.$emit('update:selected', this.selectedCopy)   //将数据双向绑定
 
             })
             this.eventBus.$on('minusSelected', (name) => {
                 let index = this.selectedCopy.indexOf(name)
                 this.selectedCopy.splice(index, 1)
-                this.eventBus.$emit('update:selected', this.selectedCopy)
+                this.eventBus.$emit('update:selected', this.selectedCopy,this.arrow)
                 this.$emit('update:selected', this.selectedCopy)
             })
         }
