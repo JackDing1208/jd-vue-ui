@@ -15,7 +15,8 @@ import TabHead from './Tab-head'
 import TabBody from './Tab-body'
 import TabItem from './Tab-item'
 import TabPane from './Tab-pane'
-import xtest from './xtest'
+import Collapse from './Collapse'
+import CollapseItem from './Collapse-item'
 
 
 Vue.component('d-button', Button)
@@ -34,7 +35,9 @@ Vue.component('d-tab-body', TabBody)
 Vue.component('d-tab-head', TabHead)
 Vue.component('d-tab-item', TabItem)
 Vue.component('d-tab-pane', TabPane)
-Vue.component('xtest', xtest)
+Vue.component('d-collapse', Collapse)
+Vue.component('d-collapse-item', CollapseItem)
+
 
 
 import store from '../state/index'
