@@ -47,7 +47,8 @@ new Vue({
     store:store,
     data: {
         message: 'hello,world!',
-        errorInfo: '名字不能少于五个字'
+        errorInfo: '名字不能少于五个字',
+        currentSelected:['1']
     },
     methods: {
         alert() {

@@ -5,11 +5,56 @@
 </template>
 
 <script>
+    import Vue from 'vue'
+
     export default {
-        name: "Collapse"
+        name: "Collapse",
+        data() {
+            return {
+                eventBus: new Vue(),
+                selectedCopy:this.selected    //避免直接操作props
+            }
+        },
+        props: {
+            //由父组件中的数组来控制子元素的渲染
+            selected: {
+                type: Array,
+            },
+            single: {
+                type: Boolean
+            }
+        },
+        provide() {
+            return {eventBus: this.eventBus}
+        },
+        mounted() {
+            this.eventBus.$emit('update:selected', this.selectedCopy)
+
+            this.eventBus.$on('addSelected', (name) => {
+                if (this.single) {
+                    this.selectedCopy = [name]
+                } else {
+                    this.selectedCopy.push(name)
+                }
+
+                this.eventBus.$emit('update:selected', this.selectedCopy)
+                this.$emit('update:selected', this.selectedCopy)   //将数据双向绑定
+
+            })
+            this.eventBus.$on('minusSelected', (name) => {
+                let index = this.selectedCopy.indexOf(name)
+                this.selectedCopy.splice(index, 1)
+
+                this.eventBus.$emit('update:selected', this.selectedCopy)
+                this.$emit('update:selected', this.selectedCopy)
+            })
+        }
     }
 </script>
 
 <style scoped lang="scss">
-
+    .collapse {
+        width: 60%;
+        margin: 0 auto;
+    }
 </style>
