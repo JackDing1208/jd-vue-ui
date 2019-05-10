@@ -103,6 +103,8 @@
             top: 0%;
             transform: translate(-50%, 0%);
             animation: slide-down 0.5s;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
 
         &.position-middle {
@@ -116,7 +118,8 @@
             bottom: 0;
             transform: translate(-50%, 0%);
             animation: slide-up 0.5s;
-
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
 
     }

@@ -54,7 +54,7 @@ new Vue({
             this.$toast('哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
                 {
                     isAuto: false,
-                    position: 'middle',
+                    position: 'top',
                     closeButton: {
                         text: '关闭',
                         callback() {
