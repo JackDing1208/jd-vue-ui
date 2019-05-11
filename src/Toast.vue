@@ -89,7 +89,7 @@
 
     .toast {
         line-height: 1.8;
-        max-width: 25vw; //直接挂在到body中，父元素是body
+        max-width: 25em; //直接挂在到body中，父元素是body
         font-size: $toast-font-size;
         background: $toast-background;
         color: $toast-color;

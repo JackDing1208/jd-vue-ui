@@ -42,18 +42,35 @@
             width: 50%;
             margin: 0 auto;
             height: 50vh;
+            border: 1px solid red;
+
         }
 
         .collapse-wrapper {
-            width: 70%;
+            width: 50%;
             margin: 0 auto;
             height: 50vh;
             border: 1px solid red;
+        }
+        .popover-wrapper{
+            width: 50%;
+            margin: 0 auto;
+            height: 50vh;
+            border: 1px solid red;
+            padding: 100px;
         }
     </style>
 </head>
 <body>
 <div id="app">
+
+    <div class="popover-wrapper">
+        <d-popover>
+            <div slot="content">冒泡内容</div>
+            <d-button>点我</d-button>
+        </d-popover>
+
+    </div>
 
     <div class="collapse-wrapper">
         <d-collapse :selected.sync="currentSelected">

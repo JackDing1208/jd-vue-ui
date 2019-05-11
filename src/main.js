@@ -17,6 +17,7 @@ import TabItem from './Tab-item'
 import TabPane from './Tab-pane'
 import Collapse from './Collapse'
 import CollapseItem from './Collapse-item'
+import Popover from './Popover'
 
 
 Vue.component('d-button', Button)
@@ -37,6 +38,7 @@ Vue.component('d-tab-item', TabItem)
 Vue.component('d-tab-pane', TabPane)
 Vue.component('d-collapse', Collapse)
 Vue.component('d-collapse-item', CollapseItem)
+Vue.component('d-popover', Popover)
 
 
 
