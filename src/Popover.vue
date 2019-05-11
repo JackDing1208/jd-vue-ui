@@ -32,17 +32,23 @@
             },
             open() {
                 this.isOpen = true
-                this.$nextTick(() => {
-                        // document.body.appendChild(this.$refs.content)
+                this.$nextTick(() => {    //处理渲染导致的异步
+                        document.body.appendChild(this.$refs.content)
+                        this.setPosition()
                         document.addEventListener('click', this.documentListener)
                     }
                 )
-                console.log(1);
             },
             close() {
                 this.isOpen = false
                 document.removeEventListener('click', this.documentListener)
-                console.log(2);
+            },
+            setPosition(){
+               let {width,height,top,left}=this.$refs.button.getBoundingClientRect()
+                console.log(width, height, top, left);
+               this.$refs.content.style.left=left+scrollX+'px'
+               this.$refs.content.style.top=top+scrollY+'px'
+
             }
         },
     }
@@ -51,16 +57,17 @@
 <style scoped lang="scss">
     .pop {
         display: inline-block;
-        .content {
-            border: 1px solid red;
-            position: absolute;
-            transform: translateY(-100%);
-            max-width: 20em;
-            font-size: 14px;
-            padding: 0.5em 0.5em;
-            word-break: break-all;
-        }
+        vertical-align: middle;
         .button {
         }
+    }
+    .content {
+        border: 1px solid red;
+        position: absolute;
+        transform: translateY(-100%);
+        max-width: 20em;
+        font-size: 14px;
+        padding: 0.5em 0.5em;
+        word-break: break-all;
     }
 </style>
