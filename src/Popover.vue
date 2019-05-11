@@ -3,7 +3,7 @@
         <div class="content" v-if="isOpen" ref="content">
             <slot name="content"></slot>
         </div>
-        <span class="button" @click.stop="toggle" ref="button">
+        <span class="button" @click="toggle" ref="button">
             <slot></slot>
         </span>
     </div>
@@ -21,20 +21,22 @@
             toggle() {
                 if (!this.isOpen) {             //轮子中不能阻止冒泡!!!
                     this.open()
-                    this.$nextTick(
-                        document.addEventListener('click', this.documentListener)
-                    )
-                } else if(this.isOpen){
+                } else if (this.isOpen) {
                     this.close()
                 }
             },
             documentListener: function (e) {
-                if(!this.$refs.content.contains(e.target)){
+                if (!this.$el.contains(e.target)) {
                     this.close()
                 }
             },
             open() {
                 this.isOpen = true
+                this.$nextTick(() => {
+                        // document.body.appendChild(this.$refs.content)
+                        document.addEventListener('click', this.documentListener)
+                    }
+                )
                 console.log(1);
             },
             close() {
@@ -43,16 +45,12 @@
                 console.log(2);
             }
         },
-        mounted() {
-
-        }
     }
 </script>
 
 <style scoped lang="scss">
     .pop {
-        position: relative;
-
+        display: inline-block;
         .content {
             border: 1px solid red;
             position: absolute;
@@ -61,11 +59,8 @@
             font-size: 14px;
             padding: 0.5em 0.5em;
             word-break: break-all;
-
         }
-
         .button {
-            display: inline-block;
         }
     }
 </style>
