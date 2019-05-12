@@ -149,7 +149,7 @@
         }
         &.position-bottom{
             margin-top: 10px ;
-            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(-1px 1px 3px rgba(0, 0, 0, 0.5));
 
             &::before{
                 top: 0%;
@@ -165,7 +165,7 @@
         }
         &.position-left{
             margin:  0 -10px;
-            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(1px -1px 3px rgba(0, 0, 0, 0.5));
             transform: translateX(-100%);
 
             &::before{
@@ -182,7 +182,7 @@
         }
         &.position-right{
             margin:  0 10px;
-            filter: drop-shadow(-1px 1px 3px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
 
             &::before{
                 top:0.5em;
