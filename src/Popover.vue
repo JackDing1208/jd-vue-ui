@@ -55,19 +55,42 @@
 </script>
 
 <style scoped lang="scss">
+    $border-color:#333;
     .pop {
         display: inline-block;
         vertical-align: middle;
         .button {
+            margin: 10px;
+            display: inline-block;
         }
     }
     .content {
-        border: 1px solid red;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.5));
+        background: white;
+        display: inline-block;
         position: absolute;
         transform: translateY(-100%);
-        max-width: 20em;
+        max-width: 15.2em;
         font-size: 14px;
         padding: 0.5em 0.5em;
         word-break: break-all;
+        margin: -10px 0;
+        &::before{
+            content: '';
+            border:10px solid transparent;
+            border-top-color: $border-color;
+            position: absolute;
+            top:100%;
+        }
+        &::after{
+            content: '';
+            border:10px solid transparent;
+            border-top-color: white;
+            position: absolute;
+            top:calc(100% - 1px);
+        }
+
     }
 </style>
