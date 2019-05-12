@@ -3,7 +3,7 @@
         <div class="content" v-if="isOpen" ref="content" :class="popPosition">
             <slot name="content"></slot>
         </div>
-        <span class="button"  ref="button">
+        <span class="button" ref="button">
             <slot></slot>
         </span>
     </div>
@@ -22,23 +22,23 @@
                 type: String,
                 default: 'top'
             },
-            trigger:{
+            trigger: {
                 type: String,
                 default: 'click'
             }
         },
-        computed:{
-            popPosition(){
+        computed: {
+            popPosition() {
                 return `position-${this.position}`
             }
         },
-        mounted(){
-          if(this.trigger==='click'){
-              this.$refs.button.addEventListener('click',this.toggle)
-          }else if(this.trigger==='hover'){
-              this.$refs.button.addEventListener('mouseenter',this.open)
-              this.$refs.button.addEventListener('mouseleave',this.close)
-          }
+        mounted() {
+            if (this.trigger === 'click') {
+                this.$refs.button.addEventListener('click', this.toggle)
+            } else if (this.trigger === 'hover') {
+                this.$el.addEventListener('mouseenter', this.open)
+                this.$el.addEventListener('mouseleave', this.close)
+            }
         },
         methods: {
             toggle() {
@@ -55,7 +55,8 @@
                 }
             },
             documentListener: function (e) {
-                if (!this.$el.contains(e.target)) {
+                if (!this.$refs.button.contains(e.target)
+                    && !this.$refs.content.contains(e.target)) {
                     this.close()
                 }
             },
@@ -65,16 +66,33 @@
             },
             close() {
                 this.isOpen = false
-                if(this.trigger==='click'){
+                if (this.trigger === 'click') {
                     document.removeEventListener('click', this.documentListener)
-                    console.log(1);
                 }
             },
             setPosition() {
                 let {width, height, top, left} = this.$refs.button.getBoundingClientRect()
-                console.log(width, height, top, left);
-                this.$refs.content.style.left = left + scrollX + 'px'
-                this.$refs.content.style.top = top + scrollY + 'px'
+                let coordinate = {
+                    top: {
+                        top: top + scrollY + 'px',
+                        left: left + scrollX + 'px'
+                    },
+                    bottom: {
+                        top: top + scrollY+height + 'px',
+                        left: left + scrollX + 'px'
+                    },
+                    left: {
+                        top: top + scrollY + 'px',
+                        left: left + scrollX + 'px'
+                    },
+                    right: {
+                        top: top + scrollY + 'px',
+                        left: left + scrollX +width+ 'px'
+                    },
+                }
+
+                this.$refs.content.style.top = coordinate[this.position].top
+                this.$refs.content.style.left = coordinate[this.position].left
 
             }
         },
@@ -95,32 +113,90 @@
     .content {
         border: 1px solid $border-color;
         border-radius: 4px;
-        filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
         background: white;
         display: inline-block;
         position: absolute;
-        transform: translateY(-100%);
         max-width: 15.2em;
         font-size: 14px;
         padding: 0.5em 0.5em;
         word-break: break-all;
-        margin: -10px 0;
 
         &::before {
             content: '';
             border: 10px solid transparent;
-            border-top-color: $border-color;
             position: absolute;
-            top: 100%;
         }
 
         &::after {
             content: '';
             border: 10px solid transparent;
-            border-top-color: white;
             position: absolute;
-            top: calc(100% - 1px);
         }
+        &.position-top{
+            transform: translateY(-100%);
+            margin-top: -10px ;
+            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
 
+            &::before{
+                top: 100%;
+                border-top-color: $border-color;
+            }
+            &::after{
+                top: calc(100% - 1px);
+                border-top-color: white;
+
+            }
+        }
+        &.position-bottom{
+            margin-top: 10px ;
+            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
+
+            &::before{
+                top: 0%;
+                transform: translateY(-100%);
+                border-bottom-color: $border-color;
+
+            }
+            &::after{
+                top:calc(0% + 1px);
+                transform: translateY(-100%);
+                border-bottom-color: white;
+            }
+        }
+        &.position-left{
+            margin:  0 -10px;
+            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
+            transform: translateX(-100%);
+
+            &::before{
+                top:0.5em;
+                left: 100%;
+                border-left-color: $border-color;
+
+            }
+            &::after{
+                top:0.5em;
+                left:calc(100% - 1px);
+                border-left-color: white;
+            }
+        }
+        &.position-right{
+            margin:  0 10px;
+            filter: drop-shadow(-1px 1px 3px rgba(0, 0, 0, 0.5));
+
+            &::before{
+                top:0.5em;
+                left: 0;
+                transform: translateX(-100%);
+                border-right-color: $border-color;
+
+            }
+            &::after{
+                top:0.5em;
+                left:calc(0% + 1px);
+                transform: translateX(-100%);
+                border-right-color: white;
+            }
+        }
     }
 </style>

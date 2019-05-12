@@ -4,8 +4,9 @@
     <list default="true" id="39dbe5e2-9037-4d02-9fed-bf1a393ef1ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Popover.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Popover.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xtest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/vuex-test.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.52364063">
+    <splitter split-orientation="horizontal" split-proportion="0.60106385">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -35,8 +36,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Popover.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+                <state relative-caret-position="594">
+                  <caret line="155" column="45" lean-forward="true" selection-start-line="155" selection-start-column="45" selection-end-line="155" selection-end-column="45" />
                 </state>
               </provider>
             </entry>
@@ -60,8 +61,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="75" column="64" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
+                <state relative-caret-position="216">
+                  <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -226,21 +227,7 @@
       <workItem from="1557461954949" duration="16495000" />
       <workItem from="1557501269311" duration="39000" />
       <workItem from="1557582909311" duration="8758000" />
-      <workItem from="1557635057404" duration="1521000" />
-    </task>
-    <task id="LOCAL-00011" summary="安装自动化测试工具">
-      <created>1556597418686</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1556597418686</updated>
-    </task>
-    <task id="LOCAL-00012" summary="icon注册为局部组件">
-      <created>1556598320012</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1556598320013</updated>
+      <workItem from="1557635057404" duration="9485000" />
     </task>
     <task id="LOCAL-00013" summary="自动测试通过">
       <created>1556601492781</created>
@@ -571,11 +558,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557593302148</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="pop基本样式完成">
+      <created>1557636734255</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1557636734255</updated>
+    </task>
+    <task id="LOCAL-00061" summary="添加hover触发事件">
+      <created>1557638045978</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1557638045978</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152336000" />
+    <option name="totallyTimeSpent" value="160300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -625,8 +626,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="自定义关闭" />
-    <MESSAGE value="text支持html" />
     <MESSAGE value="宽高BUG" />
     <MESSAGE value="只出现一个toast" />
     <MESSAGE value="简单重构" />
@@ -650,7 +649,9 @@
     <MESSAGE value="用阻止冒泡实现基本功能" />
     <MESSAGE value="解决冒泡导致的bug" />
     <MESSAGE value="解决pop定位bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决pop定位bug" />
+    <MESSAGE value="pop基本样式完成" />
+    <MESSAGE value="添加hover触发事件" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加hover触发事件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/index.js" />
@@ -888,13 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="75" column="64" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/state/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -912,10 +906,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Popover.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        <state relative-caret-position="594">
+          <caret line="155" column="45" lean-forward="true" selection-start-line="155" selection-start-column="45" selection-end-line="155" selection-end-column="45" />
         </state>
       </provider>
     </entry>
