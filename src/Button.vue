@@ -3,7 +3,7 @@
         <d-icon v-if="icon && (!isLoading ||!loading)" :name="icon"></d-icon>
         <d-icon class="loading" v-if="loading && isLoading" name="loading"></d-icon>
 
-        <div v-if="$slots.default" class="content">
+        <div v-if="$slots.default" class="button-content">
             <slot>默认内容</slot>
         </div>
     </button>
@@ -12,7 +12,6 @@
 <script>
     import Icon from './Icon'
     export default {
-        // props:['icon','icon-position'],
         components:{
           'd-icon':Icon
         },
@@ -90,13 +89,17 @@
     .click :not(:first-child){
         margin-left: 0.3em;
     }
+    .click.icon-right .button-content{
+        margin-left: 0em;
+        margin-right:0.3em;
 
+    }
     .click.circle{
         border-radius: 50%;
         width: $button-height;
         padding: 0;
     }
-    .click .content {
+    .click .button-content {
         line-height: var(--button-line-height);
     }
 
