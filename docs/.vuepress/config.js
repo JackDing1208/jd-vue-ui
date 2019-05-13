@@ -1,4 +1,5 @@
 module.exports = {
+    base:'/gulu-demo/',
     title: 'JD-wheels',
     description: 'Just playing around',
     themeConfig: {
