@@ -15,7 +15,13 @@
         name: "input-demo",
         components:{
             'd-input':Input
-        }
+        },
+        data() {
+            return{
+                errorInfo: '名字不能少于五个字',
+
+            }
+        },
     }
 </script>
 

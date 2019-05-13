@@ -1,5 +1,5 @@
 <template>
-    <button class="click" :class="[{circle:circle},`icon-${iconPosition}`,`icon-${icon}`]" @click="loadingStatus">
+    <button class="click" :class="[{circle:circle},`icon-${iconPosition}`]" @click="loadingStatus">
         <d-icon v-if="icon && (!isLoading ||!loading)" :name="icon"></d-icon>
         <d-icon class="loading" v-if="loading && isLoading" name="loading"></d-icon>
 

@@ -1,6 +1,6 @@
 module.exports = {
     base:'/gulu-demo/',
-    title: 'JD-wheels',
+    title: 'JD-Wheels',
     description: 'Just playing around',
     themeConfig: {
         nav: [
