@@ -5,7 +5,7 @@ module.exports = {
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'External', link: 'https://google.com' },
+            { text: 'GitHub', link: 'https://github.com/JackDing1208/gulu-demo' },
         ],
         sidebar: [
             {
