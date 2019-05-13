@@ -6,7 +6,7 @@ title: Button 按钮
 
 
 
-**组件示例**
+**组件展示**
 
 <ClientOnly>
 <button-demo></button-demo>
