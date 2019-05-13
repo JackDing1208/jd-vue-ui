@@ -12,11 +12,13 @@
 
 <script>
     import Button from '../../../src/Button'
+    import Icon from '../../../src/Icon'
 
     export default {
         name: "button-demo",
         components: {
-            'd-button': Button
+            'd-button': Button,
+            'd-icon':Icon
         },
 
     }

@@ -1,8 +1,8 @@
 <template>
     <div class="item">
         <div class="title-wrapper" @click="toggle">
-            <d-icon name="arrow-open" v-if="arrow && isOpen "></d-icon>
-            <d-icon name="arrow-close" v-if="arrow && !isOpen"></d-icon>
+            <d-icon class="icon" name="arrow-open" v-if="arrow && isOpen "></d-icon>
+            <d-icon class="icon" name="arrow-close" v-if="arrow && !isOpen"></d-icon>
             <div class="title">{{title}}</div>
         </div>
         <div v-if="isOpen" class="content">
@@ -83,6 +83,9 @@
 
         .title {
             line-height: 32px;
+        }
+        .icon{
+            fill:#666666;
         }
     }
 
