@@ -16,8 +16,21 @@
 </template>
 
 <script>
+    import Tab from '../../../src/Tab'
+    import TabHead from '../../../src/Tab-head'
+    import TabBody from '../../../src/Tab-body'
+    import TabItem from '../../../src/Tab-item'
+    import TabPane from '../../../src/Tab-pane'
+
     export default {
-        name: "tab-demo"
+        name: "tab-demo",
+        components: {
+            'd-tab': Tab,
+            'd-tab-body': TabBody,
+            'd-tab-head': TabHead,
+            'd-tab-item': TabItem,
+            'd-tab-pane': TabPane,
+        }
     }
 </script>
 

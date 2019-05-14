@@ -86,9 +86,11 @@
         }
         .icon{
             fill:#666666;
+            height: 8px;
+            width: 8px;
+            margin-right: 0.5em;
         }
     }
-
 
     .content {
         padding: 0 0.5em;

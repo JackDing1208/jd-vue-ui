@@ -2,9 +2,7 @@
 title: Button 按钮
 ---
 
-# 按钮
-
-
+# 按钮组件
 
 **组件展示**
 
@@ -14,7 +12,7 @@ title: Button 按钮
 
 **相关代码**
 
-```
+``` HTML
 <d-button>按钮</d-button>
 <d-button icon="like">点赞</d-button>
 <d-button icon="setting">设置</d-button>

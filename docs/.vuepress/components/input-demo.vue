@@ -1,10 +1,14 @@
 <template>
     <div class="input-wrapper">
-        <d-input value="张三"></d-input>
-        <d-input value="disabled" disabled></d-input>
-        <d-input value="readonly" readonly></d-input>
-        <d-input value="张三" :error="errorInfo"></d-input>
-
+        <d-input value="默认内容"></d-input>
+        <br>
+        <d-input value="禁用" disabled></d-input>
+        <br>
+        <d-input value="只读" readonly></d-input>
+        <br>
+        <d-input value="默认内容" :error="errorInfo"></d-input>
+        <br>
+        <d-input  v-model="model"></d-input>   {{model}}
     </div>
 
 </template>
@@ -19,7 +23,7 @@
         data() {
             return{
                 errorInfo: '名字不能少于五个字',
-
+                model:'hello!'
             }
         },
     }
