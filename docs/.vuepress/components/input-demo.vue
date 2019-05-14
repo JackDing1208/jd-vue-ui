@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="input-wrapper">
         <d-input value="张三"></d-input>
         <d-input value="disabled" disabled></d-input>
         <d-input value="readonly" readonly></d-input>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="button-wrapper">
         <d-button>按钮</d-button>
         <d-button icon="like">点赞</d-button>
         <d-button icon="setting">设置</d-button>
