@@ -1,8 +1,6 @@
 import Toast from "./Toast";
 
-
 let CurrentToast
-
 
 export default {
     install(Vue, options) {

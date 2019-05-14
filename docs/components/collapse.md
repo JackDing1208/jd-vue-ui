@@ -13,6 +13,12 @@ title: Collapse 折页
 **相关代码**
 
 ``` HTML
+<d-collapse :selected.sync="currentSelected">
+    <d-collapse-item title="标题1" name="1">第一个内容</d-collapse-item>
+    <d-collapse-item title="标题2" name="2">第二个内容</d-collapse-item>
+    <d-collapse-item title="标题3" name="3">第三个内容</d-collapse-item>
+</d-collapse>
+
 <d-collapse :selected.sync="currentSelected" arrow>
     <d-collapse-item title="标题1" name="1">第一个内容</d-collapse-item>
     <d-collapse-item title="标题2" name="2">第二个内容</d-collapse-item>

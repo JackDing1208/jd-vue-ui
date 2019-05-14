@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <div class="layout-content">
         <slot></slot>
     </div>
 </template>
@@ -11,7 +11,7 @@
 </script>
 
 <style scoped>
-    .content{
+    .layout-content{
         background: #bbbbbb;
         flex: 1;
     }

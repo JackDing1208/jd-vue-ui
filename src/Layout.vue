@@ -25,10 +25,14 @@
 
 <style scoped>
   .layout{
-      height: 100vh;
+      height: 70vh;
       display: flex;
       flex-direction: column;
       width: 100%;
+      color:white;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
   }
 
   .isRow{
