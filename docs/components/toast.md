@@ -12,12 +12,43 @@ title: Toast 弹窗
 
 **相关代码**
 
-``` HTML
-<d-button>按钮</d-button>
-<d-button icon="like">点赞</d-button>
-<d-button icon="setting">设置</d-button>
-<d-button icon="setting" icon-position="right">设置</d-button>
-<d-button icon="download" :loading="true">下载</d-button>
-<d-button icon="setting" :circle="true"></d-button>
-<d-button icon="download" :circle="true" :loading="true"></d-button>
+``` html
+<d-button @click="showToast1">默认弹窗样式</d-button>
+<d-button @click="showToast2">设置弹窗位置</d-button>
+<d-button @click="showToast3">设置关闭时间</d-button>
+<d-button @click="showToast4">设置手动关闭</d-button>
+<d-button @click="showToast5">设置关闭回调</d-button>
+```
+```javascript
+export default {
+    name: "toast-demo",
+    methods: {
+        showToast1() {
+            this.$toast('出现中间位置自动关闭')
+        },
+        showToast2() {
+            this.$toast('position设置弹窗位置',{position:'top'})
+        },
+        showToast3() {
+            this.$toast('duration设置自动关闭时间', {duration:1})
+        },
+        showToast4() {
+            this.$toast('设置手动关闭按钮', {duration:-1, closeButton: {text: '关闭'}})
+        },
+        showToast5() {
+            this.$toast('设置手动关闭回调函数',
+                {
+                    duration:-1,
+                    closeButton: {
+                        text: '关闭',
+                        callback() {
+                            alert('弹窗被关闭了')
+                        }
+                    }
+                }
+            )
+        }
+    }
+}
+
 ```

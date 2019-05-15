@@ -12,11 +12,6 @@
         name: "Toast",
 
         props: {
-
-            isAuto: {
-                type: Boolean,
-                default: true
-            },
             duration: {
                 type: Number,
                 default: 3
@@ -53,7 +48,7 @@
             }
         },
         mounted() {
-            if (this.isAuto === true) {
+            if (this.duration >0) {
                 setTimeout(() => {
                     this.disappear()
                 }, this.duration * 1000)
@@ -94,7 +89,7 @@
         background: $toast-background;
         color: $toast-color;
         display: flex;
-        position: fixed;
+        position: absolute;
         left: 50%;
         border-radius: 4px;
         box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
