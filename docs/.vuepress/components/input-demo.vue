@@ -8,7 +8,7 @@
         <br><br>
         <d-input value="默认内容" :error="errorInfo"></d-input>
         <br><br>
-        <d-input  v-model="model"></d-input>   {{model}}
+        <d-input v-model="model"></d-input>   {{model}}
     </div>
 
 </template>
