@@ -10,10 +10,10 @@ module.exports = {
         sidebar: [
             {
                 title: '快速上手',
-                children: ['/guide/install', '/guide/use' ]
+                children: ['/guide/introduction','/guide/install', '/guide/use' ]
             },
             {
-                title: '常用组件',
+                title: '组件介绍',
                 children: ['/components/layout','/components/grid',  '/components/button',
                     '/components/input', '/components/popover','/components/toast',
                     '/components/tab', '/components/collapse',]
