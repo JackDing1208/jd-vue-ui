@@ -1,7 +1,7 @@
 module.exports = {
     base:'/gulu-demo/',
-    title: 'JD-Wheels',
-    description: 'Just playing around',
+    title: 'JD-VUE-UI',
+    description: '一个简单的UI框架',
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
